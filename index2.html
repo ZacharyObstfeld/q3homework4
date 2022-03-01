@@ -84,13 +84,17 @@
 
         let path = d3.geoPath()
             .projection(myProjection)
-
+        
+        let innerlines = topojson.mesh(raw, raw.objects.state, function (a, b) {
+            return a != b;
+        });
+        
         svg.append("g")
             .selectAll("path")
             .data(state.features)
             .join("path")
             .attr("d", path)
-            .style("fill", "lightgrey")
+            .style("fill", "#eee")
             .style("stroke", "black")
             .style("pointer-events", "none")
 
