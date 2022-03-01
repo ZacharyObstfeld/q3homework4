@@ -74,7 +74,7 @@
         let width = 1050;
         let height = 700;
         
-        let margin = { top: -10, right: 10, bottom: 10, left: 0 };
+        let margin = { top: -10, right: 10, bottom: 10, left: 10 };
 
         let svg = d3.select("body")
             .select("svg")
@@ -117,7 +117,7 @@
             .data(county.features.filter(d => d.geometry != null))
             .join("circle")
             .attr("class", d => { return "circles p-" + d.properties.Geo_NAME}) //unique
-            .attr("r", d => Math.sqrt(d.properties.pop_18_in_poverty / 300))
+            .attr("r", d => Math.sqrt(d.properties.pop_18_in_poverty / 350))
             .attr("cx", d => { return path.centroid(d)[0] }) //coordinates
             .attr("cy", d => { return path.centroid(d)[1] })
             .style("fill", "orange")
@@ -127,10 +127,10 @@
 
         countyCircles.on("mouseover", (event, d) => {
             popup
-                .style("border", "1px solid black")
+                .style("border", "1.2px solid black")
                 .style("width", "200px")
                 .style("background", "white")
-                .style("padding", "10px")
+                .style("padding", "15px")
                 .style("left", (event.x + 10) + "px")
                 .style("top", (event.y - 15) + "px") //reposition
                 .style("opacity", .8)
@@ -140,7 +140,7 @@
 
         countyCircles.on("mouseout", (event, d) => {
             popup
-                .style("opacity", 0)
+                .style("opacity", 10)
 
         })
 
