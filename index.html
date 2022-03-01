@@ -2,7 +2,6 @@
 <html>
 <head>
     <meta charset="utf-8">
-        <!-- set styles on the top -->
 
     <style>
         .chart-container {
@@ -10,7 +9,6 @@
             margin: 0 auto;
             /* auto centers the div */
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            /* font-family: Georgia, 'Times New Roman', Times, serif; */
         }
 
         svg {
@@ -93,16 +91,16 @@
             .data(state.features)
             .join("path")
             .attr("d", path)
-            .style("fill", "#e5e5e5")
+            .style("fill", "lightgrey")
             .style("stroke", "black")
             .style("pointer-events", "none")
 
 
-        svg.append('text').text('Source: U.S. Census')//disposable income, which is defined as market income plus cash')
+        svg.append('text').text('Source: U.S. Census Bureau')
             .attr('x', -10)
             .attr('y', height)
-            .attr('fill', '#999999')
-            .attr('font-size', '12px')
+            .attr('fill', '#969696')
+            .attr('font-size', '14px')
             .attr('font-family', "sans-serif")
             .attr('font-weight', 200)
 
@@ -111,7 +109,7 @@
             .attr("d", path)
             .style("fill", "none")
             .style("stroke", "black")
-            .style("stroke-width", 1)
+            .style("stroke-width", 1.2)
             .style("pointer-events", "none")
 
         let countyCircles = svg.append("g")
